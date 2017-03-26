@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1490278365 source:d:\浙江大学网上数据结构\max_subsequence_sum\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
