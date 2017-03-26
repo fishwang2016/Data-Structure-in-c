@@ -28,37 +28,42 @@ int main()
     return 0;
 }
 List Merge( List L1, List L2 ){
-   List L,pc;
-   L =pc= L1;//使用L1 的头节点作为新的头节点；
+   List L,pc,p1,p2;
+   L = malloc(sizeof(struct Node));//使用L1 的头节点作为新的头节点；
+   pc = L;
+   p1 = L1;
+   p2 = L2;
+   p1=p1->Next;
+   p2 =p2->Next;
+   while(p1 && p2){
 
-   L1=L1->Next;
-   L2=L2->Next;
-
-   while(L1 && L2){
-
-     if(L1->Data < L2->Data){
-            pc->Next =L1;
-            pc = L1;
-            L1=L1->Next;
+     if(p1->Data < p2->Data){
+            pc->Next =p1;
+            pc = p1;
+            p1=p1->Next;
      }else{
-           pc->Next =L2;
-           pc = L2;
-           L2=L2->Next;
+           pc->Next =p2;
+           pc = p2;
+           p2=p2->Next;
      }
    }
-   while(L1){
-    pc->Next =L1;
-    pc = L1;
-    L1=L1->Next;
+   while(p1){
+    pc->Next =p1;
+    pc = p1;
+    p1=p1->Next;
    }
-   while(L2){
-    pc->Next =L2;
-    pc = L2;
-    L2=L2->Next;
+  // L1->Next =NULL;
+   while(p2){
+    pc->Next =p2;
+    pc = p2;
+    p2=p2->Next;
    }
+   //L2->Next= NULL;
   //pc->Next = L1?L1:L2;
-  free(L1);
-  free(L2);
+ // free(L1);
+  //free(L2);
+  L1->Next = NULL;//网上的题目要求把L1，L2均变为NULL
+  L2->Next = NULL;
    return L;
 }
 
