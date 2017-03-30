@@ -32,15 +32,26 @@ Position Create_Node(int x){
 }
 
 void Change(Position L){
-//  this function can change the content of L but cound't revise the L to NULL ...
+//**  this function can change the content of L but could't revise the L to NULL ...
     Position tmp;
     tmp = L;
     if (tmp)
         tmp=tmp->Next;
 
     tmp->Data =1000;
-    L = NULL;
+   // L->Next= NULL;// adding this line can change the L to NULL .
+   /*
+    while(L){
+        L->Data = 3;
+        L=L->Next;// after this, L is not set to NULL;
+    }
+   */
+   while(tmp){
 
+      tmp->Data =3;
+      tmp = tmp->Next;
+   }
+   L->Next = NULL;
 }
 
 int main()

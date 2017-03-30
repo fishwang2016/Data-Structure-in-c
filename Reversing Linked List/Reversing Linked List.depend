@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1490527381 source:d:\zhejiau_datastruc\data-structure-in-c\reversing linked list\main.c
+	<stdio.h>
+	<stdlib.h>
+
