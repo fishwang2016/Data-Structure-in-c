@@ -90,10 +90,6 @@ int main(int argc, const char * argv[]) {
     scanf("%d",&N);
     //printf("ok!\n");
 
-    PtrToNode root, pc;
-    root = MakeNode(0);
-    root->Left=root->Right =NULL;
-    pc = root;
 
     PtrToNode T[N*N];
     int flag=0;
@@ -126,12 +122,9 @@ int main(int argc, const char * argv[]) {
         }else{
           printf("No list to compare.\n");
         }
-
-
         scanf("%d",&N);
-
     }
-    for(i=0;i<flag;i++){
+    for(i=0;i<flag;i++){//一次性打印结果
 
         if(Check[i]==0)
             printf("No\n");
