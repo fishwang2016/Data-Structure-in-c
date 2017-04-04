@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1491294763 source:d:\zhejiau_datastruc\data-structure-in-c\heappath\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
