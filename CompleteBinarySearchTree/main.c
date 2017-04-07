@@ -35,13 +35,24 @@ void PrintA(int a[],int N){
 }
 PtrToNode BuildTree(int *a,int N){
     PtrToNode root;
-
+    int rightNode, leftNode;
     int depth = floor(log2(N))+1;
     int k = pow(2,depth)/2 - (N - pow(2,depth-1)+1);
+    if(depth ==1){
+        root = malloc(sizeof(struct Node *));
 
+    }
 
+    if (k>=0)
+        rightNode = pow(2,2)-1;
+    else
+        rightNode = pow(2,2) -1 +abs(k);
 
+    leftNode = N - rightNode -1;
+    rootIndex = N - rightNode;
 
+    root->Right = BuildTree(a[],rightNode)
+    root->Left  = BuildTree(a[],leftNode);
 
    return root;
 }
@@ -50,6 +61,7 @@ void Test(){
 
   double n;
   printf("log %d = %f \n",2,pow(2,3));
+
 }
 
 int main()
