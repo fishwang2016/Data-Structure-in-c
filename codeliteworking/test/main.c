@@ -114,8 +114,8 @@ void Test(){
     scanf("%d %d",&N, &M);
     H = InitHeap(N);
     for(i=0;i<N;i++){
-          x = rand()%10000*pow(-1,rand()%10);
-          HeapInsert(H,x);
+          x = rand()%10000*pow(-1,rand()%2);
+          HeapInsert2(H,x);
     }
     PrintHeap(H);
 
@@ -144,9 +144,6 @@ int main(){
 //            PrintPath(H,node);
 //    }
    Test();// why insert2 and insert have such great difference.
-   /*
-    测试Insert输入500个数，输入下标252将会发现一个错误的栗子。
-   */
 
 
     return 0;
