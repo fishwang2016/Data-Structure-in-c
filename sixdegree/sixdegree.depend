@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1491997286 source:d:\zhejiau_datastruc\data-structure-in-c\sixdegree\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -58,7 +58,18 @@ void BSF(){
 
 }
 
-void DFS(PtrToNode nodep[],int visit[]){
+void DFS(PtrToNode nodep[],int visit[],int v){
+     if(visit[v]==-1)
+          visit[v]=v;
+    for(;nodep[v]!=NULL;){
+
+
+        if(nodep[v])
+          DFS(nodep,visit,nodep[v]->Data);
+        nodep[v]=nodep[v]->Next;
+    }
+
+
 
 }
 
@@ -81,7 +92,10 @@ int main()
     }
 
     PrintAdjList(Nodep,NumOfV);
-    DFS(Nodep,visit);
+    DFS(Nodep,visit,0);
+
+    for(i=0;i<NumOfV;i++)
+        printf("%d %d\n",i,visit[i]);
 
 
     return 0;
